@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      /* background-color: #111; */
+      overflow-x: hidden;
+      overflow-y: hidden;
+      transition: 0.5s;
+      padding-top: 0px;
+    }
+
+    #main {
+      transition: margin-left 0.5s;
+      padding: 16px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <iframe src="https://chrome-x.zipwhip.com" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  <div id="main">
+    <a href="#" onclick="sidebar()"><img src="ziphwhip-32.png" alt="Z"></a>
+    <h2>Sidenav Push Example</h2>
+    <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+  </div>
+
+  <script>
+    function sidebar() {
+      if (document.getElementById("mySidenav").style.width === "350px") {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      } else {
+        document.getElementById("mySidenav").style.width = "350px";
+        document.getElementById("main").style.marginLeft = "350px";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

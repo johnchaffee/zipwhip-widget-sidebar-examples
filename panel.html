@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+      height: 0;
+      width: 400px;
+      position: fixed;
+      z-index: 0;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      transition: height 0.5s;
+      padding-top: 0px;
+      margin-left: 10px;
+      border: 1px solid grey;
+    }
+
+    #z-icon {
+      position: fixed;
+      bottom: 0;
+      left: 10px;
+      transition: bottom 0.5s;
+    }
+
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <iframe src="https://chrome-x.zipwhip.com" width="100%" height="100%" frameborder="0"></iframe>
+  </div>
+
+  <div id="main">
+    <div id="z-icon"><a href="#" onclick="panel()"><img src="ziphwhip-32.png" alt="Z"></a></div>
+    <h2>Panel Overlay Example</h2>
+    <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+  </div>
+
+  <script>
+    function panel() {
+      if (document.getElementById("mySidenav").style.height === "600px") {
+        document.getElementById("z-icon").style.bottom = "0";
+        document.getElementById("mySidenav").style.height = "0";
+      } else {
+        document.getElementById("z-icon").style.bottom = "600px";
+        document.getElementById("mySidenav").style.height = "600px";
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
